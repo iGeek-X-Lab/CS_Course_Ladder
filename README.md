@@ -2,7 +2,7 @@
 CS Course Ladder is an innovative project to help UACS students to understand the structure of the CS courses more easily and provided in a career-oriented guidance. 
 This open-source project can will involved with different aspected and will be managed by iGeek Team, which the largest technology student group at University of Alberta. 
 Tech Stack will be involved:
-- MangoDB
+- MongoDB
 - Express.JS
 - React
 - Node.JS
