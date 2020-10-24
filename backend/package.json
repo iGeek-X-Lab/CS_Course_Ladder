@@ -1,0 +1,28 @@
+{
+  "name": "cs_course_ladder",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iGeek-X-Lab/CS_Course_Ladder.git",
+    "directory": "backend"
+  },
+  "author": {
+    "name": "iGeek",
+    "email": "igeek@ualberta.ca"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iGeek-X-Lab/CS_Course_Ladder/issues"
+  },
+  "homepage": "https://github.com/iGeek-X-Lab/CS_Course_Ladder#readme",
+  "dependencies": {
+    "mongoose": "^5.10.10",
+    "express": "^4.17.1"
+  }
+}
