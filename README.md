@@ -19,7 +19,7 @@ Tech Stack will be involved:
 ### `node -v`
 You can install at https://nodejs.org/en/download/ if you don't have NodeJS installed already. <br />
 
-***2.*** Clone the repository, you can either directly download the .zip version on gitlab or by running:
+***2.*** Clone the repository, you can either directly download the .zip version on github or by running:
 ### `git clone https://github.com/iGeek-X-Lab/CS_Course_Ladder.git`
 **Note: you must have git installed to use git clone** <br />
 
