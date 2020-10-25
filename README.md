@@ -23,17 +23,14 @@ You can install at https://nodejs.org/en/download/ if you don't have NodeJS inst
 ### `git clone https://github.com/iGeek-X-Lab/CS_Course_Ladder.git`
 **Note: you must have git installed to use git clone** <br />
 
-***3.*** Change to the project directory:
-### `cd CS_Course_Ladder` <br />
-
-***4.*** Go to both /client and /server directory and run
+***3.*** Change your directory to the project and go to both /client and /server directory and run
 ### `npm install` <br />
 
-***5.*** Run the following in /server directory to start the express.js server:
+***4.*** Run the following in /server directory to start the express.js server:
 ### `npm start`
 You can go to [http://localhost:9000] in your browser to check if the server correctly started<br />
 
-***6.*** Run the following in /client directory to start the react.js client:
+***5.*** Run the following in /client directory to start the react.js client:
 ### `npm start`
 A browser should automatically open, or you can open it maually by typing [http://localhost:3000] in your browser <br />
 
