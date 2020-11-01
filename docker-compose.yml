@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+    client:
+        tty: true
+        build: ./client
+
+        ports:
+        - "3000:3000"
+
+        depends_on:
+        - server
+    
+    server:
+        build: ./server
+
+        ports:
+        - "9000:9000"
