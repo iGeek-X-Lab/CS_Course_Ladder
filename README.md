@@ -36,3 +36,5 @@ A browser should automatically open, or you can open it maually by typing [http:
 
 # Preparation
 You should be given permission to iGeek AWS service, if not, please contact: iGeek@ualberta.ca for more information.
+
+# Testing Merge Policy
