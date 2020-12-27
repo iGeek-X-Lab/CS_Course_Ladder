@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const mongoose = require("mongoose");
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://iGeek:iGeekCSCL2020@igeekmongodb.yefsu.mongodb.net/iGeek?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
 
 // Variable to be sent to Frontend with Database status
 let databaseConnection = "Waiting for Database response...";
@@ -9,19 +11,11 @@ router.get("/", function(req, res, next) {
     res.send(databaseConnection);
 });
 
-// Connecting to MongoDB
-mongoose.connect("mongodb://mongodb:27017/test");
-
-// If there is a connection error send an error message
-mongoose.connection.on("error", error => {
-    console.log("Database connection error:", error);
-    databaseConnection = "Error connecting to database";
-});
-
-// If connected to MongoDB send a success message
-mongoose.connection.once("open", () => {
-    console.log("Connected to Database!");
-    databaseConnection = "Connected to Database";
+client.connect(async function(err) {
+    const collection = client.db('igeek').collection("DemoData");
+    var message = await collection.find().toArray();
+    databaseConnection = message[0]["message"];
+    client.close();
 });
 
 module.exports = router;
