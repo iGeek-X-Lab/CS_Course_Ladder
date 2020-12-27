@@ -1,0 +1,24 @@
+{
+    "family": "CS_Course_Ladder",
+    "executionRoleArn": "arn:aws:iam::421584496092:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+        {
+            "name": "CS_Course_Ladder",
+            "image": "421584496092.dkr.ecr.us-east-2.amazonaws.com/igeek_cs_course_ladder:latest",
+            "portMappings": [
+                {
+                    "containerPort": 3000,
+                    "hostPort": 3000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "512",
+    "memory": "1024"
+}
