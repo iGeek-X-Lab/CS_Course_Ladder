@@ -11,11 +11,23 @@ class App extends React.Component {
 	}
 
   	callAPI() {
-		fetch("http://localhost:9000/testAPI")
-			.then(res => res.text())
-			.then(res => this.setState( {
-				apiResponse: res
-			}));
+		var param = {
+			"lowerBound": "100",
+			"upperBound": "200"
+		}
+		var url = new URL("http://localhost:9000/testDB");
+		url.search = new URLSearchParams(param).toString();
+		fetch(url)
+		.then(res => res.text())
+		.then(res => {
+			var courseNumbers = "";
+			for (const course of JSON.parse(res)) {
+				courseNumbers += course.Number + " ";
+			}
+			this.setState({
+				apiResponse: courseNumbers
+			})
+		});
   	}
 	
 	componentDidMount() {
