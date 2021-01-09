@@ -1,0 +1,14 @@
+.courseListColumn {
+    margin-right: 20px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh; */
+}
+
+.courseButton {
+    margin-bottom: 10px;
+    max-width: 100px;
+}
