@@ -1,27 +1,32 @@
 const express = require("express");
 const router = express.Router();
-const mongoose = require("mongoose");
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://iGeek:iGeekCSCL2020@igeekmongodb.yefsu.mongodb.net/iGeek?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
 
-// Variable to be sent to Frontend with Database status
-let databaseConnection = "Waiting for Database response...";
-
-router.get("/", function(req, res, next) {
-    res.send(databaseConnection);
+router.get("/", async (req, res, next) => {
+    var query = req.query;
+    var courses = await getCoursesInRange(query.lowerBound, query.upperBound);
+    res.send(courses);
 });
 
-// Connecting to MongoDB
-mongoose.connect("mongodb://mongodb:27017/test");
-
-// If there is a connection error send an error message
-mongoose.connection.on("error", error => {
-    console.log("Database connection error:", error);
-    databaseConnection = "Error connecting to database";
+client.connect(async(err) => {
+    if (err) {
+        console.log(err);
+    }
 });
 
-// If connected to MongoDB send a success message
-mongoose.connection.once("open", () => {
-    console.log("Connected to Database!");
-    databaseConnection = "Connected to Database";
-});
+async function getCoursesInRange(lowerBound, upperBound) {
+    var findQuery = {
+        "Number": {
+            $gte: parseInt(lowerBound),
+            $lte: parseInt(upperBound)
+        }
+    }
+
+    const collection = client.db('igeek').collection("courses");
+    var courses = await collection.find(findQuery).toArray();
+    return courses;
+}
 
 module.exports = router;
