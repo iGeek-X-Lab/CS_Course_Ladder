@@ -2,6 +2,9 @@ import React from 'react';
 import logo from './logo.png';
 import './App.css';
 
+// import css
+import "./styles/CourseDetail.css";
+
 class App extends React.Component {
 	constructor(props) {
 		super(props);

@@ -1,0 +1,14 @@
+.course-detail .course-cid {
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.course-detail .course-title {
+    font-size: 24px;
+}
+
+.course-detail .course-type {
+    background-color: gray;
+    padding: 3px 10px;
+    font-size: 16px;
+}
